@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+void removeDuplicates(int arr[], int *size) {
+ int i=0;
+  for(int j=1;j<*size;j++){
+    if(arr[j]!=arr[i]){
+      arr[++i]=arr[j];
+    }
+  }
+  *size = i+1;
+}
+/* Include other headers as needed */
+int main()
+{
+    int i, size = 0;
+    scanf("%d", &size);
+
+    int arr[size];
+    for(i = 0; i < size; i++) 
+        scanf("%d", &arr[i]);
+
+    removeDuplicates(arr, &size);
+    for (i = 0; i < size; i++) 
+        printf("%d\n", arr[i]);
+  
+    return 0;
+}
