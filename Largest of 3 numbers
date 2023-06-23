@@ -1,0 +1,27 @@
+/* add c headers if necessary*/
+#include <stdio.h>
+/* Include other headers as needed */
+int main()
+{
+	int a,b,c,large;
+  	scanf("%d %d %d",&a,&b,&c);
+  	if(a>b ){
+      if(a>c){
+        large = a;
+      }
+      else{
+        large =c;
+      }
+    }
+  	else {
+      if(b>c){
+        large =b;
+      }
+      else{
+        large =c;
+      }
+    }  
+  printf("%d",large);
+  return 0;
+}
+/* add tail for c if necessary*/
