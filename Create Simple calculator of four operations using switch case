@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+  float a,b,res=0.0f;
+  char c;
+  scanf("%f %c %f",&a,&c,&b);
+  switch(c){
+    case '+':res =a+b; printf("%.2f",res); break;
+    case '-':res =a-b; printf("%.2f",res); break;
+    case '*':res =a*b; printf("%.2f",res); break;
+    case '/':res =a/b; printf("%.2f",res); break;
+  }
+    return 0;
+}
