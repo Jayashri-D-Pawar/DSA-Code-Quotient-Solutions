@@ -1,0 +1,40 @@
+#include<iostream>
+#include<cstdio>
+
+#define ROWS 50
+#define COLS 50
+
+using namespace std;
+void printSpiral(int a[ROWS][COLS], int r, int c) {
+  int left =0,top=0;
+  int right = c-1, bottom=r-1;
+  while(top<=bottom && left<=right){
+    for(int i =left;i<=right;i++)
+      cout<<a[top][i]<<endl;
+  	top++;
+    for (int i=top;i<=bottom;i++)
+  		cout<<a[i][right]<<endl;
+    right--;
+    if(top<=bottom){
+      for(int i=right;i>=left;i--)
+        	cout<<a[bottom][i]<<endl;
+    bottom--;
+    }
+    if(left<=right){
+      for(int i=bottom;i>=top;i--)
+        cout<<a[i][left]<<endl;
+      left++;
+    }
+  }
+}
+int main()
+{
+  int r, c;
+  cin>>r>>c;
+  int a[ROWS][COLS], i, j;
+  for(i = 0; i < r; i++)
+    for(j = 0; j < c; j++)
+      cin>>a[i][j];
+  printSpiral(a, r, c);
+  return 0;
+}
