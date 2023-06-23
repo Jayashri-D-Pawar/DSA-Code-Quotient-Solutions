@@ -1,0 +1,19 @@
+#include <stdio.h>
+int power(int num, int pow){
+  if(pow<0){
+    return -1;
+  }
+  else{
+    int res=1;
+  	for(int i=1;i<=pow;i++){
+      res *= num;
+    }
+    return res;
+    }
+}
+int main(){
+  int a,b;
+  scanf("%d%d",&a,&b);
+  printf("%d",power(a,b));
+  return 0;
+}
