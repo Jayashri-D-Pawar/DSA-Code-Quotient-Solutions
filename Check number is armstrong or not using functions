@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include<math.h>
+void isArmstrong(int n)
+{
+  int rem,armstrong,sum=0;
+  armstrong=n;
+  int count = (n==0)?1:log10(n)+1;
+  while(n!=0){
+    rem = n%10;
+    sum+=pow(rem,count);
+  	n = n/10;
+  }
+  if(armstrong==sum){
+    printf("yes");
+  }else{
+    printf("no");
+  }
+}
+int main()
+{
+    int num;
+    scanf ("%d", &num);
+    isArmstrong(num);
+    return 0;
+}
