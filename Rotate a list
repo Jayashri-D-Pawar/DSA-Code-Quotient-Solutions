@@ -1,0 +1,37 @@
+/* add c headers if necessary*/
+#include <stdio.h>
+void reverse(int arry[],int start,int end){
+  while(start<=end){
+    int temp = arry[start];
+    arry[start]= arry[end];
+    arry[end]= temp;
+    start++;
+    end--;
+  }
+}
+int main()
+{
+	int T;
+   	scanf("%d",&T);
+  	for(int i=1;i<=T;i++)
+    {
+      int arry[100000],n,R;
+      scanf("%d",&n);
+      for(int j=0;j<n;j++)
+        scanf("%d",&arry[j]);
+      scanf("%d",&R);
+	  R= R%n; 
+      reverse(arry,0,R-1);
+      reverse(arry,R,n-1);
+      reverse(arry,0,n-1);
+      for(int i=0;i<n;i++){
+        printf("%d",arry[i]);
+       if(i!=n-1){
+         printf(" ");
+       }
+      }
+      printf("\n");
+    }
+  return 0;
+}
+/* add tail for c if necessary*/
