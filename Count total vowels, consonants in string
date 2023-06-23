@@ -1,0 +1,14 @@
+# Python code
+
+ 
+str = input()
+length = len(str)
+vowel=0;
+consonant  =0
+for i in range(length):
+  if(str[i] in 'aeiouAEIOU'):
+    vowel+=1
+  else:
+    consonant +=1
+print(vowel,consonant)
+ 
