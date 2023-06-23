@@ -1,0 +1,13 @@
+//C lang 
+
+
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	float PA, R, Time, CI;
+  	scanf("%f %f %f",&PA,&R,&Time);
+  	CI = PA * pow((1 + R/100),Time);
+  	printf("%.1f",CI);
+    return 0;
+}
