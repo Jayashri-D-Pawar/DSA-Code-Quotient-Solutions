@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main()
+{
+int x,y,md,flag=1;
+  scanf("%d %d",&x,&y);
+  md = (x>y)?x:y;
+  while(flag=1){
+    if(md%x==0 && md % y ==0){
+      printf("%d",md);
+      break;
+    }
+    ++md;
+  }
+    return 0;
+}
