@@ -1,0 +1,9 @@
+void deleteNode(struct Node* n1) {
+  if(n1==NULL || n1->next==NULL){
+    return;
+  }
+  struct Node* nextNode = n1->next;
+  n1->data = nextNode->data;
+  n1->next = nextNode->next;
+  free(nextNode);
+}
