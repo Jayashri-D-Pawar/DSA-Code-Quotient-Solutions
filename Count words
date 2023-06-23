@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include<string.h>
+
+int countWords(char str[]) {
+  int count=0,i=0;
+  int len = strlen(str);
+  int isWord =0;
+  while(i<len)
+  {
+    if(str[i] == ' ' )
+      isWord=0;
+   else if(isWord==0){
+     count++;
+     isWord=1;
+   }
+    i++;
+  }
+  return count;
+}
+int main()
+{
+  char str[100] = "\0";
+  int num;
+  scanf("%[^\n]", str);
+  num = countWords(str);
+  printf("%d\n",num);
+  return 0;
+}
