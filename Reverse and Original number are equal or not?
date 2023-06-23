@@ -1,0 +1,23 @@
+/* add c headers if necessary*/
+#include <stdio.h>
+/* Include other headers as needed */
+int main()
+{
+	int n,rev,rem,old;
+  	rev =0;
+  	scanf("%d",&n);
+  	old =n;
+  	while(n!=0){
+      rem = n%10;
+      rev = rev *10 + rem;
+      n = n /10;
+    }
+   if(rev==old){
+     printf("Equal");
+   }
+   else{
+     printf("Not Equal");
+   }
+  return 0;
+}
+/* add tail for c if necessary*/
