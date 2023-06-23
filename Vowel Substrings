@@ -1,0 +1,14 @@
+# Python code 
+
+ 
+# Return the number of substrings that start from a vowel
+def countVowelSubstr(str):
+  count =0;
+  length = len(str)
+  for i in range(length):
+    if str[i] in 'aeiouAEIOU':
+      count += (length-i)
+  return count % 10007
+if __name__ == "__main__":
+  str = input().strip();
+  print(countVowelSubstr(str));
