@@ -1,0 +1,91 @@
+#include<stdio.h>
+#include<stdlib.h>
+  
+struct Node
+{
+    int data;
+    struct Node* next;
+};
+  
+void forwardPrint(struct Node* head)
+{
+    if (head == NULL)
+       return;
+ 
+    printf("%d ", head->data);
+    forwardPrint(head->next);
+}
+
+void insertEnd(struct Node** head, int data)
+{
+    struct Node* node = (struct Node*) malloc(sizeof(struct Node));
+    struct Node *last = *head;
+    node->data  = data;     //  Insert data in new node
+    node->next = NULL;   // link new node to NULL as it is last node
+    if (*head == NULL)  // if list is empty add in beginning.
+    {
+       *head = node;
+       return;
+    }
+    while (last->next != NULL)  // Find the last node
+        last = last->next;
+    last->next = node;  // Add the node after the last node of list
+    return;
+}
+
+struct Node* shiftSmallLarge(struct Node *head) {
+  if(head==NULL || head->next==NULL)
+    return head;
+  struct Node* temp = head;
+  struct Node* max = head;
+  struct Node* min = head;
+  while(temp!=NULL){
+    if(min->data > temp->data){
+      min = temp;
+    }
+    if(max->data < temp->data){
+      max = temp;
+    }
+    temp = temp->next;
+  }
+  if(head!=min){
+    temp = head;
+    while(temp->next !=min){
+	temp = temp->next;
+    }
+    temp->next = min->next;
+    min->next = head;
+    head = min;
+  }
+  temp=head;
+  while(temp->next !=max){
+    temp = temp->next;
+  }
+  temp->next = max->next;
+  temp = head;
+  while(temp->next != NULL){
+    temp = temp->next;
+  }
+  max->next =NULL;
+  temp->next = max;
+  return head;
+  }
+int main()
+{
+  int t,n,m;
+  scanf("%d",&t);
+  while(t--)
+  {
+    struct Node* head = NULL;
+    scanf("%d",&n);
+    while(n--)
+    {
+      scanf("%d",&m);
+      insertEnd(&head, m);
+    }
+    head = shiftSmallLarge(head);
+    forwardPrint(head);
+    printf("\n");
+  }
+  return 0;
+}
