@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <limits.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <math.h>
+
+long fact(int n) {
+ 	long res=1;
+  while(n>=1)
+  {
+    res *= n;
+    n--;
+  }
+  return res;
+}
+int main()
+{
+   int n;
+   scanf("%d",&n);
+   printf("%ld", fact(n));
+}
