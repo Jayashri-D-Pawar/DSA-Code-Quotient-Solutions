@@ -1,0 +1,41 @@
+// Java Code
+
+import java.util.*;
+
+class Result {
+  static ArrayList<Integer> reduceArray(ArrayList<Integer> arr) {
+    Collections.sort(arr);
+    int s =arr.get(0);
+    int n= arr.size();
+    int count =1;
+    ArrayList<Integer> ans = new ArrayList<>();
+    ans.add(n);
+   	for(int i=1;i<arr.size();i++){
+	if(arr.get(i)==s){
+      count++;
+    }
+      if(arr.get(i)>s){
+        s = arr.get(i);
+        ans.add(n-count);
+        n = n-count;
+        count=1;
+      }
+    } 
+    return ans;
+  }
+}
+class Main {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int arrCount = Integer.parseInt(sc.nextLine().trim());
+    ArrayList<Integer> arr = new ArrayList<Integer>();
+    for (int i=0; i<arrCount; i++)
+	    arr.add(Integer.parseInt(sc.nextLine().trim()));
+      
+    ArrayList<Integer> result = Result.reduceArray(arr);
+    int l = result.size();
+    for(int i=0; i<l; i++)
+        System.out.println(result.get(i));
+    sc.close();
+  }
+}
