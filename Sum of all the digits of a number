@@ -1,0 +1,20 @@
+#include <stdio.h>
+/* Include other headers as needed */
+int main()
+{
+  int n,ip;
+  scanf("%d",&n);
+  while(n>0){
+    scanf("%d",&ip);
+    int rem=0,sum=0;
+    while(ip!=0)
+    {
+      rem = ip %10;
+      sum+=rem;
+      ip = ip/10;
+    }    
+    printf("\n%d",sum);
+    n--;
+  }
+    return 0;
+}
