@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+bool isPangram(string str) {
+	int index;
+  bool res[26]={false};
+  	for(int i=0;i<str.length();i++){
+      if(str[i]>='A' && str[i]<='Z'){
+        index = str[i] - 'A';   	// returning the index of that alphabet
+      }
+      else if(str[i]>='a' && str[i]<='z'){
+        index = str[i] -'a';
+      }
+      res[index] = true;
+      }
+  for(int i=0;i<26;i++){
+    if(res[i]==false)
+      	return 0;
+  }
+  return 1;
+}
+int main()
+{
+  int t;
+  cin>>t;
+  getchar();
+  string str;
+  while(t--)
+  {
+    getline(cin, str);
+    if(isPangram(str)){
+      printf("YES");
+    }else{
+      printf("NO");
+    }
+    cout<<endl;
+  }
+}
