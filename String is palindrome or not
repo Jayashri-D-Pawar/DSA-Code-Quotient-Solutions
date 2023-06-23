@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int isPalindrome(char *str) {
+  int len = strlen(str);
+  int i=0,j=len-1;
+  int res =0;
+  while(i<=j){
+    if(str[i]==str[j]){
+      res =1;
+    }else{
+      res =0;
+    }
+    i++;
+    j--;
+  }
+  if(res ==0){
+    return 0;
+  }
+  else{
+    return 1;
+  }
+}
+
+int main() 
+{
+  int t,i,j=0;
+  char a[50], b[50];
+  scanf("%d",&t);
+  while(t--)
+  {
+    scanf("%s", a);
+    if(isPalindrome(a)){
+      printf("YES");
+    }else{
+      printf("NO");
+    }
+    printf("\n");
+  }
+}
