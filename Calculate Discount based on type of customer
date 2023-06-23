@@ -1,0 +1,27 @@
+ 
+#include <stdio.h>
+int main()
+{
+  int gross;
+  int dis;
+  float bill;
+  scanf("%d",&gross);
+  if(gross < 1000)
+  	dis =0;
+  else if(gross >=1001 && gross <=5000)
+    dis = 5;
+  else if(gross>=5001 && gross <=10000)
+    dis = 10;
+  else if(gross >10000)
+  {
+  	dis =15;
+    if(gross>30000){
+      dis +=2;
+    } 
+  }  
+  dis = (gross * dis )/100;
+  bill = gross - dis;
+  printf("%.2f",bill);
+    return 0;
+}
+ 
