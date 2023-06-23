@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+
+int rotationCount(int arr[], int size) {
+  int left =0;
+  int right =size-1;
+  if(left==right){
+    return 0;
+  }
+  while(left<=right){
+  	if(arr[left]<=arr[right])
+      	return left;
+    int mid = (left + right )/2;
+    int prev = (mid-1+size)%size;
+    int next = ( mid + 1) %size;
+    if(arr[mid] < arr[prev] && arr[mid] < arr[next]){
+      return mid;
+    }
+    else if(arr[mid]<arr[right]){
+		right = mid-1;	
+    }
+    else{
+      left = mid+1;
+    }
+  }
+  return -1;
+}
+int main()
+{
+  int T, i, size = 0;
+ cin >> T ;
+
+  while (T--)
+  {
+    cin >> size ;
+
+    int arr[size];
+    for( i = 0; i < size; i++) 
+      cin >> arr[i] ;
+
+    cout << rotationCount(arr, size) << endl;
+  }
+  return 0;
+}
