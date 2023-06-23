@@ -1,0 +1,25 @@
+/* add c headers if necessary*/
+#include <stdio.h>
+/* Include other headers as needed */
+void fibonacci(int i,int a, int b,int n){
+ 	if(i>n){
+      return;
+    }
+  	int c = a+b;
+  	fibonacci(i+1,b,c,n);
+  	printf("%d\n",c);
+}
+int main()
+{
+	int n,a=0,b=1;
+  	scanf("%d",&n);
+  	fibonacci(3,0,1,n);
+  	if(n>=2){
+      printf("%d\n",b);
+    }
+  	if(n>=1){
+      printf("%d\n",a);
+    }
+ 	 return 0;
+}
+/* add tail for c if necessary*/
