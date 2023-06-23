@@ -1,0 +1,12 @@
+#include <stdio.h>
+/* Include other headers as needed */
+int main()
+{
+   int n,i,j=1;
+  	scanf("%d %d",&n,&i);
+  	while(j<=i){
+      printf("\n%d",(n*j));
+      j++;
+    }
+  return 0;
+}
